@@ -1,7 +1,8 @@
 import React,{useState} from "react";
 import styled from "styled-components";
-import { ThemeProvider } from "styled-components";
+// import { ThemeProvider } from "styled-components";
 import { Cell, Grid } from "styled-css-grid";
+import Button from '/src/lib/Button'
 
 const CustomInput = styled.input((props) => {
     return {
@@ -24,24 +25,24 @@ const CustomInput = styled.input((props) => {
       width: "100%",
     };
   });
-  const Boton = styled.button`
-  font-size:1em;
-  margin:1em;
-  padding:0.25em 1em;
-  border-radius:3px;
+//   const Boton = styled.button`
+//   font-size:1em;
+//   margin:1em;
+//   padding:0.25em 1em;
+//   border-radius:3px;
 
-  color:${props=>props.theme.main};
-  border: 2px solid ${props=>props.theme.main};
-`;
-    Boton.defaultProps={
-        theme:{
-        main:'palevioletred'
-     }
-    }
+//   color:${props=>props.theme.main};
+//   border: 2px solid ${props=>props.theme.main};
+// `;
+//     Boton.defaultProps={
+//         theme:{
+//         main:'palevioletred'
+//      }
+//     }
 
-    const theme={
-        main:'mediumseagreen'
-    }
+//     const theme={
+//         main:'mediumseagreen'
+//     }
 
   const Formulario = ()=>{
     const [formValue, setFormValue] = useState({
@@ -89,9 +90,7 @@ const CustomInput = styled.input((props) => {
                 value={correo}
                 required
                 />
-                    <ThemeProvider theme={theme}>
-                        <Boton>Suscribirse</Boton>
-                    </ThemeProvider>
+                    <Button>Suscribirse</Button>
                 </Cell>
             </Grid>
         </form>

@@ -1,13 +1,22 @@
 import Link from "next/link";
-import { useMemo } from "react";
+import { createContext, useMemo } from "react";
 import styled from "styled-components";
 import { Cell, Grid } from "styled-css-grid";
 import Servicios from "../components/CServicios/servicios";
 import Layout from "../components/Layout";
+import Carrusel from "../components/Carrusel/Carrusel"
+// import Recomendaciones from "../components/Recomendaciones/Recomendaciones";
 
 const CenterCell = styled(Cell)`
   text-align: center;
+  p{
+    font-style: italic;
+  }
 `;
+
+// const Parrafo = styled.p`
+//   font-style: italic;
+// `;
 
 export default function Home() {
   const services = useMemo(
@@ -39,6 +48,10 @@ export default function Home() {
     <Layout>
       <Grid columns={1}>
         <CenterCell>
+          <Carrusel />
+        </CenterCell>
+        <CenterCell>
+          
           <h2>Sobre nosotros</h2>
           <p>
             Cuba es una extensa y seductora isla .Nosotros el equipo de Havaname
@@ -69,7 +82,22 @@ export default function Home() {
             ))}
           </Grid>
         </CenterCell>
+
+        <Grid columns={2}>
+          <Cell width={1}>
+            <h2>Recomendaciones de Clientes</h2>
+          </Cell>
+          <Cell width={1}>
+                <Link href={`/testimonials/testimonials`}>
+                  <a>
+                    Mostrar Todas
+                  </a>
+                </Link>
+          </Cell>
+        </Grid>
+        
       </Grid>
     </Layout>
   );
 }
+                
