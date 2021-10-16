@@ -14,7 +14,7 @@ const Guia = ()=>{
                 <div class="img">
                     <img id='guia' src='/thumb_825x329.png' alt='./IMG_20170220_162611.jpg' />
                 </div>
-            <div class="zoom-icon1"></div>
+            {/* <div class="zoom-icon1"></div> */}
       
             </div>
             <div>
