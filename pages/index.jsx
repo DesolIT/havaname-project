@@ -1,11 +1,9 @@
 import Link from "next/link";
-import { createContext, useMemo } from "react";
 import styled from "styled-components";
 import { Cell, Grid } from "styled-css-grid";
-import Servicios from "../components/CServicios/servicios";
 import Layout from "../components/Layout";
 import Carrusel from "../components/Carrusel/Carrusel"
-// import Recomendaciones from "../components/Recomendaciones/Recomendaciones";
+import ApiServices from "../components/CServicios/apiServices";
 
 const CenterCell = styled(Cell)`
   text-align: center;
@@ -14,36 +12,9 @@ const CenterCell = styled(Cell)`
   }
 `;
 
-// const Parrafo = styled.p`
-//   font-style: italic;
-// `;
 
 export default function Home() {
-  const services = useMemo(
-    () => [
-      {
-        imagen: "/yuca.png",
-        titulo: "Servicio de Guia Local",
-        id: 1,
-      },
-      {
-        imagen: "/alojamiento.png",
-        titulo: "Alquiler de habitaciones",
-        id: 2,
-      },
-      {
-        imagen: "/coches.png",
-        titulo: "Renta de coches",
-        id: 3,
-      },
-      {
-        imagen: "/comida.png",
-        titulo: "Alimentacion",
-        id: 4,
-      },
-    ],
-    []
-  );
+
   return (
     <Layout>
       <Grid columns={1}>
@@ -69,7 +40,7 @@ export default function Home() {
           <h3>¡No espere más, Reserve ya!</h3>
         </CenterCell>
 
-        <CenterCell>
+        {/* <CenterCell>
           <Grid columns={4}>
             {services.map((ser) => (
               <Cell key={ser.id} width={1}>
@@ -81,8 +52,9 @@ export default function Home() {
               </Cell>
             ))}
           </Grid>
-        </CenterCell>
-
+        </CenterCell> */}
+        <ApiServices />
+        
         <Grid columns={2}>
           <Cell width={1}>
             <h2>Recomendaciones de Clientes</h2>
