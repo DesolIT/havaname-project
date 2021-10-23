@@ -22,10 +22,13 @@ return(
     <>
         {list.map((s)=>parseInt(s.id)===parseInt(id) 
         ?<Layout>
-
+            {console.log(s)}
             <div>
                 <h1>{s.titulo}</h1>
                 <img src = {apiUrl + s.imagen.url} alt={s.titulo}/>
+                <div>
+                {s.imagen.created_at}
+                </div>
                 <p>{s.descripcion}</p>
             </div>
         </Layout> 

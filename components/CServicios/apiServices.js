@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
 import {getServices} from "./services";
-import Layout from '../Layout'
 import styled from "styled-components";
 import { Cell, Grid } from "styled-css-grid";
 import Link from 'next/link';
@@ -30,7 +29,6 @@ const apiServices = ()=>{
 
     return(
         <>
-        {/* <Layout> */}
             <CenterCell>
             <Grid columns={4}>
                 {list.map(item=> (
@@ -45,7 +43,7 @@ const apiServices = ()=>{
              ))}
             </Grid>
             </CenterCell>
-         {/* </Layout>     */}
+         
          </>
      )
  }

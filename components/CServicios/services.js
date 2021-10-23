@@ -12,3 +12,8 @@ export function getServices(){
   return fetch('http://localhost:1337/Servicios')
   .then(data=>data.json())
 }
+
+// export function getDestinos(){
+//   return fetch('http://localhost:1337/Destinos')
+//   .then(data=>data.json())
+// }
