@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-// import Servicios from "../../../components/CServicios/servicios";
 import Leer from "../leer/leer";
 
 const Mostrar = (props) => {
