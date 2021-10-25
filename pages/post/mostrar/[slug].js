@@ -1,23 +1,3 @@
-// import React, { useEffect, useState } from "react";
-// import { useRouter } from "next/router";
-// import LeerPosts from "../leer/leerPost";
-
-
-// const Post = (props) => {
-//   const router = useRouter();
-//   const [id, setId] = useState(null);
-
-//   useEffect(() => {
-//     setId(router.query.id);
-//   }, [router.query]);
-
-//   return (
-//         <LeerPosts id={id}/>
-//    );
-// };
-
-// export default Post;
-
 import Layout from "../../../components/Layout";
 import fetchFromStrapi from "../../../lib/dest";
 
@@ -47,12 +27,12 @@ export async function getStaticPaths(){
     paths: destinos.map((destino)=>({
       params:{
         slug: destino.slug,
-        // id:destino.id
       },
     })),
     fallback: false,
   };
 }
+        
 
 export async function getStaticProps({params}){
   const destino = await fetchFromStrapi(`destinos?slug=${params.slug}`);
