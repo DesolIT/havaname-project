@@ -9,19 +9,19 @@ const content = [{
     'url':'/slider01.jpg',
     'tittle': 'Esto es un titulo', 
     'description':'Excursion la Habana Moderna y la Habana Vieja en una jornada. Precio total a pagar hasta 4 personas 95 Euros o 100 USD ',
-    'ruta': '/servicios/guia-local/'
+    'ruta': '/promociones/promociones'
 },
 {
     'url':'/slider02.jpg',
     'tittle': 'Esto es un titulo', 
     'description':'Excursion Trinidad-Cienfuegos en dos jornadas',
-    'ruta': '/servicios/guia-local/'
+    'ruta': '/promociones/promociones'
 },
 {
     'url':'/slider03.jpg',
     'tittle': 'Esto es un titulo', 
     'description':'Circuito por Cuba con descuento de hasta un 20%',
-    'ruta': '/servicios/guia-local/'
+    'ruta': '/promociones/promociones'
 }]
 
 const Carrusel = ()=>{

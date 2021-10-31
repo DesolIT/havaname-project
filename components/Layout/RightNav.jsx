@@ -42,9 +42,9 @@ const RightNav = ({ open }) => {
       <Link  href='/'><a>Inicio</a></Link>
       <Link  href='/destinos/destinos'><a>Destinos</a></Link>
       <Link  href='/excursiones/excursiones'><a>Excursiones</a></Link>
-      <Link  href='/actualidad'><a>Actualidad</a></Link>
-      <Link  href='/promociones'><a>Promociones</a></Link>
-      <Link  href='/contactanos'><a>Contáctanos</a></Link>
+      <Link  href='/actualidad/actualidad'><a>Actualidad</a></Link>
+      <Link  href='/promociones/promociones'><a>Promociones</a></Link>
+      <Link  href='/contacto/contactanos'><a>Contáctanos</a></Link>
     </Ul>
       </div>
   )

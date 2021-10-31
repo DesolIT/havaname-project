@@ -32,7 +32,7 @@ const Navbar = () => {
       <Nav>
         <Link href="/">
           <a>
-            <img id="logo" src="havaname-logo.png" alt="logo" />
+            <img id="logo" src="/havaname-logo.png" alt="logo" />
           </a>
         </Link>
         <Burger />

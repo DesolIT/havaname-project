@@ -25,24 +25,6 @@ const CustomInput = styled.input((props) => {
       width: "100%",
     };
   });
-//   const Boton = styled.button`
-//   font-size:1em;
-//   margin:1em;
-//   padding:0.25em 1em;
-//   border-radius:3px;
-
-//   color:${props=>props.theme.main};
-//   border: 2px solid ${props=>props.theme.main};
-// `;
-//     Boton.defaultProps={
-//         theme:{
-//         main:'palevioletred'
-//      }
-//     }
-
-//     const theme={
-//         main:'mediumseagreen'
-//     }
 
   const Formulario = ()=>{
     const [formValue, setFormValue] = useState({
@@ -61,19 +43,7 @@ const CustomInput = styled.input((props) => {
 
       const enviarDatos = (e) => {
         e.preventDefault();
-        // let datos = JSON.parse(localStorage.getItem("newArreglo2")) || [];
-        // let result = [...datos];
-    
-        // if (id) {
-        //   result = datos.map((el) => {
-        //     if (el.identidad === id) {
-        //       return formValue;
-        //     }
-        //     return el;
-        //   });
-        // } else {
-        //   result.push(formValue);
-        // }
+     
         console.log(`el correo ${correo} ha sido enviado para suscribirse`);
     }
 

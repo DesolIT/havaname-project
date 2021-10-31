@@ -1,17 +1,15 @@
-// import React from "react";
-// import Layout from "../../components/Layout";
-
 import Layout from "../../components/Layout";
 import fetchFromStrapi from "../../lib/dest";
 import Link from "next/link";
+import { Cell, Grid } from "styled-css-grid";
 
 export default function Excursion({excursionItems}){
     const apiUrl = 'http://localhost:1337'
     return(
          <Layout>
+             <Grid columns={4}>
             {excursionItems.map((excursion)=>(
-                // <Link as ={`/post/mostrar/${destino.slug}`} href='/post/mostrar/[id]'>
-                   
+                <Cell key={excursion.id} width={2}>  
                     <div>
                         <div>
                             <img src = {apiUrl + excursion.imagen.url} alt={excursion.titulo}/>
@@ -30,7 +28,9 @@ export default function Excursion({excursionItems}){
                         <a>Seguir leyendo...</a>
                     </Link>
                     </div>
+                    </Cell>
             ))}
+            </Grid>
        </Layout>
 
     )
