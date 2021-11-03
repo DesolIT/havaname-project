@@ -1,9 +1,14 @@
 import Layout from "../../../components/Layout";
 import fetchFromStrapi from "../../../lib/dest";
-
+import { useRouter } from "next/router";
 
 const ActualidadItems = ({actualidad})=>{
   const apiUrl = 'http://localhost:1337'
+  const router = useRouter()
+  if (router.isFallback) {
+    // return <div>Loading...</div>
+    return null
+  }
   return(
     <Layout>
       <div>
