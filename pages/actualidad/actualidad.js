@@ -1,35 +1,35 @@
-import fetchFromStrapi from "../../lib/dest"
 import Link from "next/link";
-import Layout from "../../components/Layout";
 import { Cell, Grid } from "styled-css-grid";
+import Layout from "../../components/Layout";
+import fetchFromStrapi from "../../lib/dest";
 
-export default function Destinos({destinoItems}){
+export default function Actualidad({actualidadItems}){
     const apiUrl = 'http://localhost:1337'
     return(
          <Layout>
-            <Grid columns={2}>
-            {destinoItems.map((destino)=>(
+             <Grid columns={4}>
+            {actualidadItems.map((actualidad)=>(
                 // <Link as ={`/post/mostrar/${destino.slug}`} href='/post/mostrar/[id]'>
-                <Cell key={destino.id} width={1}> 
+                <Cell key={actualidad.id} width={2}>  
                     <div>
                         <div>
-                            <img src = {apiUrl + destino.imagen.url} alt={destino.titulo}/>
+                            <img src = {apiUrl + actualidad.imagen.url} alt={actualidad.titulo}/>
                         </div>
                         <div>
-                            {destino.imagen.created_at}
+                            {actualidad.imagen.created_at}
                         </div>
                         <div>
-                            <h1>{destino.titulo}</h1>
+                            <h1>{actualidad.titulo}</h1>
                         </div>
                         <div>
-                            <p>{`${destino.descripcion.slice(0,250)}...` }</p>
+                            <p>{`${actualidad.descripcion.slice(0,250)}...` }</p>
                         </div>
                         
-                    <Link href={`/post/mostrar/${destino.slug}`}>
+                    <Link href={`/actualidad/mostrar/${actualidad.slug}`}>
                         <a>Seguir leyendo...</a>
                     </Link>
                     </div>
-                </Cell>
+                    </Cell>
             ))}
             </Grid>
        </Layout>
@@ -37,13 +37,9 @@ export default function Destinos({destinoItems}){
     )
 }
 export async function getStaticProps(){
-    const destinoItems = await fetchFromStrapi('destinos');
+    const actualidadItems = await fetchFromStrapi('actualidads');
     return{
-        props:{destinoItems},
+        props:{actualidadItems},
         revalidate:1,
     };
 }
-
-       
-        
-        

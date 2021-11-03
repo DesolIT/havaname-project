@@ -1,8 +1,8 @@
 import Layout from "../../../components/Layout";
 import fetchFromStrapi from "../../../lib/dest";
-import {useRouter} from 'next/router'
+import { useRouter } from "next/router";
 
-const DestinoItems = ({destino})=>{
+const ActualidadItems = ({actualidad})=>{
   const apiUrl = 'http://localhost:1337'
   const router = useRouter()
   if (router.isFallback) {
@@ -12,27 +12,27 @@ const DestinoItems = ({destino})=>{
   return(
     <Layout>
       <div>
-        <h1>{destino.titulo}</h1>
+        <h1>{actualidad.titulo}</h1>
       </div>
       <div>
-        <img src = {apiUrl + destino.imagen.url} alt={destino.titulo}/>
+        <img src = {apiUrl + actualidad.imagen.url} alt={actualidad.titulo}/>
       </div>
       <div>
-        {destino.imagen.created_at}
+        {actualidad.imagen.created_at}
       </div>
       <div>
-        {destino.descripcion}
+        {actualidad.descripcion}
       </div>
     </Layout>
   )
 }
 
 export async function getStaticPaths(){
-  const destinos = await fetchFromStrapi('destinos');
+  const actualidads = await fetchFromStrapi('actualidads');
   return{
-    paths: destinos.map((destino)=>({
+    paths: actualidads.map((actualidad)=>({
       params:{
-        slug: destino.slug,
+        slug: actualidad.slug,
       },
     })),
     fallback: false,
@@ -41,11 +41,11 @@ export async function getStaticPaths(){
         
 
 export async function getStaticProps({params}){
-  const destino = await fetchFromStrapi(`destinos?slug=${params.slug}`);
+  const actualidad = await fetchFromStrapi(`actualidads?slug=${params.slug}`);
   return{
-    props: {destino:destino[0]},
+    props: {actualidad:actualidad[0]},
     revalidate:1,
   };
 }
 
-export default DestinoItems
+export default ActualidadItems
