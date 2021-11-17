@@ -3,6 +3,7 @@ import fetchFromStrapi from "../../../lib/dest";
 import {useRouter} from 'next/router'
 
 const ExcursionItems = ({excursion})=>{
+  
   const apiUrl = 'http://localhost:1337'
   const router = useRouter()
   if (router.isFallback) {

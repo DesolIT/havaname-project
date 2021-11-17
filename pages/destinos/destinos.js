@@ -2,14 +2,17 @@ import fetchFromStrapi from "../../lib/dest"
 import Link from "next/link";
 import Layout from "../../components/Layout";
 import { Cell, Grid } from "styled-css-grid";
+import Aside from "../../components/AsideBar/aside";
 
 export default function Destinos({destinoItems}){
     const apiUrl = 'http://localhost:1337'
     return(
          <Layout>
             <Grid columns={2}>
+
+            <Aside />
+            
             {destinoItems.map((destino)=>(
-                // <Link as ={`/post/mostrar/${destino.slug}`} href='/post/mostrar/[id]'>
                 <Cell key={destino.id} width={1}> 
                     <div>
                         <div>
@@ -31,7 +34,9 @@ export default function Destinos({destinoItems}){
                     </div>
                 </Cell>
             ))}
+                
             </Grid>
+            
        </Layout>
 
     )

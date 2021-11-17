@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import Button from '/src/lib/Button'
 import styled from "styled-components";
 import { Cell, Grid } from "styled-css-grid";
+import router from "next/router";
 
 const CustomInput = styled.input((props) => {
     return {
@@ -51,7 +52,9 @@ const CustomInput = styled.input((props) => {
 const FormContact = ()=>{
     let sacarStorage;
     const [formValue, setFormValue] = useState({
-        autor: '',
+        nombre: '',
+        email: '',
+        asunto:'',
         contenido:''
     });
 
@@ -74,10 +77,11 @@ const FormContact = ()=>{
         
         localStorage.setItem("contenido", JSON.stringify(result));
         sacarStorage = JSON.parse(localStorage.getItem("contenido"));
-         router.push("/contactanos");
+        //  router.push("/contacto/contactanos");
+        router.push("/");
         
     }
-    const { autor, contenido} = formValue;
+    const { nombre, email, asunto, contenido} = formValue;
     return(
         <>
         <form onSubmit={enviarDatos}>
@@ -88,10 +92,10 @@ const FormContact = ()=>{
                     </label>
                 <CustomInput
                     type="text"
-                    name="autor"
+                    name="nombre"
                     placeholder="Jhon Doe"
                     onChange={handleChange}
-                    value={autor}
+                    value={nombre}
                     required
                 />
                     <label name='email'>
@@ -102,7 +106,7 @@ const FormContact = ()=>{
                     name="email"
                     placeholder="jhonDoe@example.com"
                     onChange={handleChange}
-                    value={autor}
+                    value={email}
                     required
                 />
                     <label name='asunto'>
@@ -113,7 +117,7 @@ const FormContact = ()=>{
                     name="asunto"
                     placeholder="Asunto..."
                     onChange={handleChange}
-                    value={autor}
+                    value={asunto}
                     required
                 />
                     <label name='contenido'>

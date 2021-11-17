@@ -4,6 +4,7 @@ import Layout from "../../components/Layout";
 import { Cell, Grid } from "styled-css-grid";
 import styled from "styled-components";
 
+
 const H3 = styled.h3`
 margin-top: 5px;
 text-shadow: none;
@@ -24,6 +25,7 @@ const Contactanos = ()=>{
                     <H3>Siéntase libre de preguntar sobre cualquier duda que tenga y pida información. Estamos a su servicio.</H3>
                 </Cell>
             </Grid>
+            
         </Layout>
     )
 }
